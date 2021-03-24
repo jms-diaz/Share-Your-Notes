@@ -26,3 +26,13 @@ function flash($name = '', $message = '', $class = 'alert alert-success')
         }
     }
 }
+
+function isLoggedIn()
+{
+    // works with if-else loop but not with ternary. the hell???
+    if (isset($_SESSION['user_id'])) {
+        return true;
+    } else {
+        return false;
+    }
+}

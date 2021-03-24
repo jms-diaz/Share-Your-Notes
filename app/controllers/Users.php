@@ -106,11 +106,6 @@ class Users extends Controller
         redirect('users/login');
     }
 
-    public function isLoggedIn()
-    {
-        isset($_SESSION['user_id']) ? true : false;
-    }
-
     public function verifyLoginEmail($email)
     {
         if (empty($email)) {
@@ -164,6 +159,6 @@ class Users extends Controller
         $_SESSION['user_id'] = $user->id;
         $_SESSION['user_email'] = $user->email;
         $_SESSION['user_name'] = $user->name;
-        redirect('pages/index');
+        redirect('notes');
     }
 }

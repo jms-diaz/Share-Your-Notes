@@ -8,6 +8,9 @@ class Pages extends Controller
 
     public function index()
     {
+        if (isLoggedIn()) {
+            redirect('notes');
+        }
         $data = [
             'title' => SITENAME,
             'description' => 'Simple notes sharing website built with MVC Framework'
