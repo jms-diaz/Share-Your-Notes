@@ -61,7 +61,7 @@ class Notes extends Controller
     public function edit($id)
     {
         if ($_SERVER['REQUEST_METHOD'] == 'POST') {
-            // $_POST = filter_input_array(INPUT_POST, FILTER_SANITIZE_STRING);
+            $_POST = filter_input_array(INPUT_POST, FILTER_SANITIZE_STRING);
             $data = [
                 'id' => $id,
                 'title' => trim($_POST['title']),
